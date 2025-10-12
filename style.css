@@ -1,94 +1,165 @@
-body{
-    background-color: #333;
+/* ======== BASE ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
 }
 
-/* Menu lateral */
-.div-menu{
-    background-image: url(dark-background-abstract-background-network-3d-background-1280x1280-8324.png);
-    z-index: 1;
-    display: grid;
+body {
     background-color: #333;
-    border: 1px solid #333;
-    width: 200px;
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    height: 100%;
-}
-
-/* Lista de itens do menu */
-#lista-menu{
-    position: absolute;
-    top: 50%;
-    list-style: none;
     color: white;
-    font-size: 25px;
-    padding-left: 0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+/* ======== MENU LATERAL ======== */
+.menu-lateral {
+    background-color: #2d2f33;
+    width: 220px;
+    min-width: 70px;
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    z-index: 2;
+}
+
+.menu-lateral.fechado {
+    width: 70px;
+}
+
+/* ======== TOPO DO MENU ======== */
+.topo-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #444;
+}
+
+/* Logo Naxa */
+.logo-naxa {
+    height: 50px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Logo desaparece suavemente quando o menu fecha */
+.menu-lateral.fechado .logo-naxa {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+/* Botão toggle */
+#btn-toggle-menu {
+    cursor: pointer;
+    font-size: 28px;
+    color: #264a8d;
+    transition: transform 0.3s ease;
+    margin-left: -100px;
+}
+
+/* Gira o botão ao recolher o menu */
+.menu-lateral.fechado #btn-toggle-menu {
+    transform: rotate(180deg);
+}
+
+/* ======== LISTA DE MENU ======== */
+.lista-menu {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 /* Itens do menu */
-.item-div-menu{
-    display: flex;             /* alinhamento horizontal do texto e ícone */
-    align-items: center;       /* centraliza verticalmente */
-    gap: 10px;                 /* espaço entre ícone e texto */
-    margin-top: 25px;
-    padding: 8px 12px;
-    cursor: pointer;           /* cursor de mão */
-    color: #FFFFFF;
-    font-size: 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Hover: muda cor do fundo e do texto */
-.item-div-menu:hover {
-    background-color: #555;    /* fundo mais claro */
-    color: #264a8d;            /* texto dourado */
-}
-
-/* Ícones SVG dentro do menu */
-.item-div-menu svg {
-    fill: #FFFFFF;             /* cor padrão do ícone */
-    transition: fill 0.3s;
-}
-
-/* Ícones mudam de cor junto com o hover */
-.item-div-menu:hover svg {
-    fill: #264a8d;
-}
-
-/* Ícone de configuração */
-#icon-config-menu{
-    position: absolute;
-    top: 79px;
-    left: 12px;
-}
-
-/* Botão do toggle do menu */
-#button-menu{
-    z-index: 2;
-    position: absolute;
-    top: 100px;
-    left: 0px;
-    color: #264a8d;
+.item-div-menu {
     display: flex;
-    background-color: grey;
-    width: 35px;
-    padding: 5px;
-    border-radius: 5px;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    cursor: pointer;
+    color: #ddd;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
 }
 
-/* Botão para aparecer menu */
-#button-aparecer-menu{
-    z-index: 2;
-    position: absolute;
-    top: 35%;
-    background-color: grey;
-    left: 0px;
-    width: 35px;
-    padding: 5px;
+.item-div-menu:hover,
+.item-div-menu.ativo {
+    background-color: #264a8d;
+    color: #fff;
+}
+
+.item-div-menu span.material-symbols-outlined {
+    font-size: 24px;
+}
+
+/* Texto desaparece quando o menu fecha */
+.menu-lateral.fechado .texto-menu {
     display: none;
-    color: #264a8d;
-    border-radius: 5px;
 }
 
+/* Centraliza ícones verticalmente no modo fechado */
+.menu-lateral.fechado .item-div-menu {
+    justify-content: center;
+    padding: 15px 0;
+}
+
+/* ======== CONTEÚDO PRINCIPAL ======== */
+main {
+    flex: 1;
+    margin-left: 220px;
+    transition: margin-left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.menu-lateral.fechado + main {
+    margin-left: 70px;
+}
+
+/* ======== CABEÇALHO SUPERIOR ======== */
+.topbar {
+    background-color: #222;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    border-bottom: 1px solid #444;
+}
+
+/* ======== SEÇÕES ======== */
+.sessao {
+    display: none;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.sessao.ativa {
+    display: block;
+}
+
+.sessao h1 {
+    color: #264a8d;
+    margin-bottom: 10px;
+}
+
+.sessao p {
+    color: #ddd;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+    .menu-lateral {
+        position: absolute;
+        z-index: 5;
+    }
+}

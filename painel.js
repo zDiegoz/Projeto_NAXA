@@ -1,43 +1,32 @@
-// Mostrar/ocultar senha
-function mostrarSenha() {
-    const campoSenha = document.getElementById("senha");
-    if (campoSenha.type === "password") {
-        campoSenha.type = "text";
-    } else {
-        campoSenha.type = "password";
-    }
-}
+// ======== ELEMENTOS ========
+const menu = document.getElementById('menu-div-id');
+const toggleBtn = document.getElementById('btn-toggle-menu');
+const botoes = document.querySelectorAll('.item-div-menu[data-section]');
+const secoes = document.querySelectorAll('.sessao');
+const btnLogout = document.getElementById('btn-logout');
 
-// Toggle do menu
-let botaoToggleMenu = document.getElementById('toggle-menu');
-let botaoAparecerMenu = document.getElementById('button-aparecer-menu');
-let menu = document.getElementById('menu-div-id');
-menu.style.display = 'grid';
-
-botaoAparecerMenu.addEventListener('click', function() {
-    if (menu.style.display === 'none') {
-        menu.style.display = 'grid';
-        botaoAparecerMenu.style.display = 'none';
-        botaoToggleMenu.style.display = 'grid';
-    }
+// ======== TOGGLE MENU ========
+toggleBtn.addEventListener('click', () => {
+    menu.classList.toggle('fechado');
 });
 
-botaoToggleMenu.addEventListener('click', function() {
-    if (menu.style.display === 'grid') {
-        menu.style.display = 'none';
-        botaoAparecerMenu.style.display = 'flex';
-        botaoToggleMenu.style.display = 'none';
-    }
-});
+// ======== TROCAR SEÇÕES ========
+botoes.forEach(btn => {
+    btn.addEventListener('click', () => {
+        botoes.forEach(b => b.classList.remove('ativo'));
+        btn.classList.add('ativo');
 
-// Botão de logout (agora dentro do menu)
-let btnLogout = document.getElementById("btn-logout");
-if (btnLogout) {
-    btnLogout.addEventListener("click", function() {
-        window.location.href = "login.html"; // redireciona para a página de login
+        secoes.forEach(sec => sec.classList.remove('ativa'));
+        const destino = btn.getAttribute('data-section');
+        const secao = document.getElementById(destino);
+        if (secao) secao.classList.add('ativa');
     });
-}
-// Botão de logout
-document.getElementById("btn-logout").addEventListener("click", function() {
-    window.location.href = "login.html";
+});
+
+// ======== LOGOUT ========
+btnLogout.addEventListener('click', () => {
+    if (confirm('Deseja realmente sair do sistema?')) {
+        localStorage.removeItem('usuarioNome');
+        window.location.href = 'login.html';
+    }
 });
