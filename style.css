@@ -163,3 +163,88 @@ main {
         z-index: 5;
     }
 }
+/* ======== FORMULÁRIO DE USUÁRIO ======== */
+#form-usuario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #264a8d;
+}
+
+.campo-form input {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #fff;
+}
+
+.campo-form input:disabled,
+.campo-form input[readonly] {
+    background-color: #444;
+    color: #bbb;
+}
+
+.btn-salvar {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #264a8d;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-salvar:hover {
+    background-color: #264a8d;
+}
+/* ======== BARRA TOPO ======== */
+.barra-topo {
+    width: 100%;
+    height:81px;
+    background-color: #222; /* mesma cor do menu lateral */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    border-bottom: 1px solid #444;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    transition: margin-left 0.3s ease;
+}
+
+.titulo-pagina {
+    font-size: 20px;
+    font-weight: bold;
+    color: #264a8d; /* azul do tema */
+}
+
+.acoes-topo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.acoes-topo .material-symbols-outlined {
+    font-size: 26px;
+    cursor: pointer;
+    color: #264a8d;
+    transition: color 0.3s;
+}
+
+.acoes-topo .material-symbols-outlined:hover {
+    color: #ffffff;
+}

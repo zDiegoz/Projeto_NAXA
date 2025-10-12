@@ -45,28 +45,67 @@
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main>
+        <!-- Barra superior global -->
+        <div class="barra-topo">
+            <div class="titulo-pagina" id="titulo-pagina">Painel de Suporte Naxa</div>
+
+            <div class="acoes-topo">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="material-symbols-outlined">help_outline</span>
+            </div>
+        </div>
+        <!-- Seções do painel -->
         <section id="inicio" class="sessao ativa">
-            <h1>Painel de Suporte Naxa</h1>
             <p>• O sistema de suporte interno da <strong>Naxa</strong> foi desenvolvido para agilizar e organizar os
                 chamados de TI e suporte técnico.</p><br>
-            <p>• Aqui você pode abrir tickets, acompanhar solicitações, ajustar seu perfil e gerenciar suas configurações
-                de acesso.</p>
+            <p>• Aqui você pode abrir tickets, acompanhar solicitações, ajustar seu perfil e gerenciar suas
+                configurações de acesso.</p>
         </section>
 
         <section id="usuario" class="sessao">
-            <h1>Usuario</h1>
+            <form id="form-usuario">
+                <div class="campo-form">
+                    <label for="usuario-id">ID:</label>
+                    <input type="text" id="usuario-id" name="usuario-id" value="1" readonly>
+                </div>
+
+                <div class="campo-form">
+                    <label for="usuario-nome">Nome:</label>
+                    <input type="text" id="usuario-nome" name="usuario-nome" placeholder="Digite seu nome">
+                </div>
+
+                <div class="campo-form">
+                    <label for="usuario-cpf">CPF:</label>
+                    <input type="text" id="usuario-cpf" name="usuario-cpf" placeholder="Digite seu CPF">
+                </div>
+
+                <div class="campo-form">
+                    <label for="usuario-email">Email:</label>
+                    <input type="email" id="usuario-email" name="usuario-email" placeholder="Digite seu email">
+                </div>
+
+                <div class="campo-form">
+                    <label for="usuario-setor">Setor:</label>
+                    <input type="text" id="usuario-setor" name="usuario-setor" placeholder="Setor onde trabalha">
+                </div>
+
+                <div class="campo-form">
+                    <label for="usuario-cargo">Cargo:</label>
+                    <input type="text" id="usuario-cargo" name="usuario-cargo" placeholder="Seu cargo">
+                </div>
+                <button type="submit" class="btn-salvar">Salvar Alterações</button>
+            </form>
         </section>
 
         <section id="tickets" class="sessao">
-            <h1>Tickets</h1>
             <br><br>
             <button>Abrir novo chamado</button>
         </section>
 
         <section id="configuracoes" class="sessao">
-            <h1>Configurações</h1>
         </section>
     </main>
+
 
     <script src="painel.js"></script>
 </body>
