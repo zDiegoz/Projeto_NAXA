@@ -1,0 +1,43 @@
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="logo 2.png" alt="" id="img-logo">
+    </div>
+
+    <!-- Caixa de login -->
+    <div id="div-login">
+        <h2>Acesso ao Sistema</h2>
+        <form id="form-login">
+            <label for="usuario">Usuário:</label><br>
+            <input type="text" id="usuario" name="usuario" required><br><br>
+
+            <label for="senha">Senha:</label><br>
+            <div class="input-container">
+                <input type="password" id="senha" name="senha" required>
+                <span class="toggle-senha" id="toggle-senha">👁</span>
+            </div><br>
+
+            <div>
+                <input type="checkbox" id="lembrar" name="lembrar">
+                <label for="lembrar">Lembrar-me</label>
+            </div>
+            <div>
+                <a href="#">Esqueci minha senha</a>
+            </div>
+
+            <input type="submit" value="Entrar">
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,129 @@
+/* Reset e estilo padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* empilha logo e login */
+    background: linear-gradient(to right, #000000, #264a8d,#000000 );
+}
+
+/* Container da logo */
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 0; 
+}
+
+.logo-container img {
+    max-width: 200px; /*tamanho da logo*/
+    height: auto;
+    border-radius: 20px; /* cantos arredondados */
+    box-shadow: none; /* sem sombra para não marcar */
+    background: transparent;
+    margin-top: 20px; /* distância do topo da tela */
+    margin-bottom: -40px; /* cola no login */
+}
+
+/* Caixa do login */
+#div-login {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+#div-login h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Campos de input */
+#div-login input[type="text"],
+#div-login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 3px solid #ccc;
+    transition: border 0.3s;
+}
+
+#div-login input[type="text"]:focus,
+#div-login input[type="password"]:focus {
+    border-color: #2575fc;
+    outline: none;
+}
+
+/* Botões */
+#div-login input[type="submit"],
+#div-login input[type="reset"] {
+    width: 48%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#div-login input[type="submit"] {
+    background-color: #2575fc;
+}
+
+#div-login input[type="submit"]:hover {
+    background-color: #1a5edb;
+}
+
+#div-login input[type="reset"] {
+    background-color: #ccc;
+    color: #333;
+}
+
+#div-login input[type="reset"]:hover {
+    background-color: #b3b3b3;
+}
+
+/* Checkbox */
+#div-login div input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Link "Esqueci minha senha" */
+#div-login a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #2575fc;
+    font-size: 0.9em;
+}
+
+#div-login a:hover {
+    text-decoration: underline;
+}
+
+/* Ícone mostrar/ocultar senha */
+.input-container {
+    position: relative;
+}
+
+.toggle-senha {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.1em;
+}
