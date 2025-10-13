@@ -57,7 +57,7 @@ body {
 #btn-toggle-menu {
     cursor: pointer;
     font-size: 28px;
-    color: #264a8d;
+    color: #b63b3b;
     transition: transform 0.3s ease;
     margin-left: -100px;
 }
@@ -92,7 +92,7 @@ body {
 
 .item-div-menu:hover,
 .item-div-menu.ativo {
-    background-color: #264a8d;
+    background-color: #b63b3b;
     color: #fff;
 }
 
@@ -148,7 +148,7 @@ main {
 }
 
 .sessao h1 {
-    color: #264a8d;
+    color: #b63b3b;
     margin-bottom: 10px;
 }
 
@@ -179,7 +179,7 @@ main {
 .campo-form label {
     margin-bottom: 5px;
     font-weight: bold;
-    color: #264a8d;
+    color: #b63b3b;
 }
 
 .campo-form input {
@@ -200,7 +200,7 @@ main {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    background-color: #264a8d;
+    background-color: #b63b3b;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
@@ -208,7 +208,7 @@ main {
 }
 
 .btn-salvar:hover {
-    background-color: #264a8d;
+    background-color: #1d1010;
 }
 /* ======== BARRA TOPO ======== */
 .barra-topo {
@@ -231,7 +231,7 @@ main {
 .titulo-pagina {
     font-size: 20px;
     font-weight: bold;
-    color: #264a8d; /* azul do tema */
+    color: #b63b3b; 
 }
 
 .acoes-topo {
@@ -243,7 +243,7 @@ main {
 .acoes-topo .material-symbols-outlined {
     font-size: 26px;
     cursor: pointer;
-    color: #264a8d;
+    color: #b63b3b;
     transition: color 0.3s;
 }
 

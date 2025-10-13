@@ -7,12 +7,12 @@
 }
 
 body {
-    height: 100vh;
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; /* empilha logo e login */
-    background: linear-gradient(to right, #000000, #264a8d,#000000 );
+    background: linear-gradient(to right, #000000, #b63b3b,#000000 );
 }
 
 /* Container da logo */
@@ -60,7 +60,7 @@ body {
 
 #div-login input[type="text"]:focus,
 #div-login input[type="password"]:focus {
-    border-color: #2575fc;
+    border-color: #b63b3b;
     outline: none;
 }
 
@@ -80,11 +80,11 @@ body {
 }
 
 #div-login input[type="submit"] {
-    background-color: #2575fc;
+    background-color: #b63b3b;
 }
 
 #div-login input[type="submit"]:hover {
-    background-color: #1a5edb;
+    background-color: #1d1010;
 }
 
 #div-login input[type="reset"] {
