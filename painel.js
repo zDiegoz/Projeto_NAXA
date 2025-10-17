@@ -36,6 +36,6 @@ botoes.forEach(btn => {
 btnLogout.addEventListener('click', () => {
     if (confirm('Deseja realmente sair do sistema?')) {
         localStorage.removeItem('usuarioNome');
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     }
 });
